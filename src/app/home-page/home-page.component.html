@@ -1,0 +1,18 @@
+<div #mainContainer class="main-container">
+    <div *ngFor="let logo of logos; let i = index"
+         class="logo-section"
+         [ngStyle]="{background: logo.background}"
+         [id]="'section' + i">
+
+        <div class="left-item-menu">
+            <h2 class="logo-title">{{logo.name}}</h2>
+        </div>
+
+    </div>
+
+    <div class="slider-menu">
+        <div *ngFor="let sliderMenuItem of logos; let i = index"
+             class="slider-menu-item" [ngClass]="{'slider-menu-item-active': i === currentMenuItem}" (click)="setCurrentMenu(i)">
+        </div>
+    </div>
+</div>
