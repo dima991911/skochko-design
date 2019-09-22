@@ -15,4 +15,8 @@
              class="slider-menu-item" [ngClass]="{'slider-menu-item-active': i === currentMenuItem}" (click)="setCurrentMenu(i)">
         </div>
     </div>
+    
+    <div class="arrow-top" [@changeVisibleArrow]="visibleTopArrow" (click)="nextMenuItem(0)">
+        <img src="assets/top-arrow-white.png" class="arrow-icon" alt="Arrow Icon">
+    </div>
 </div>

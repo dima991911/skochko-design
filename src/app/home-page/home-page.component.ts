@@ -1,4 +1,5 @@
 import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 const logos = [
   {name: 'New Logo', background: 'red'},
@@ -12,7 +13,21 @@ const logos = [
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
+  animations: [
+    trigger('changeVisibleArrow', [
+      state('showTopArrow', style({
+        transform: 'translateY(0)',
+        opacity: 1
+      })),
+      state('hideTopArrow', style({
+        transform: 'translateY(100%)',
+        opacity: 0
+      })),
+      transition('showTopArrow=>hideTopArrow', animate('400ms ease-in')),
+      transition('hideTopArrow=>showTopArrow', animate('400ms ease-in'))
+    ]),
+  ]
 })
 export class HomePageComponent {
   logos: object[] = logos;
@@ -20,6 +35,7 @@ export class HomePageComponent {
   canScroll: boolean = true;
   currentMenuItem: number = 0;
   touchStartYoffset: number;
+  visibleTopArrow: string = 'hideTopArrow';
 
   @ViewChild('mainContainer', {static: false}) public mainContainer: ElementRef<any>;
 
@@ -52,6 +68,7 @@ export class HomePageComponent {
   }
 
   nextMenuItem(item: number) {
+    this.visibleTopArrow = item === 0 ? 'hideTopArrow' : 'showTopArrow';
     document.getElementById('section' + (item)).scrollIntoView();
     this.currentMenuItem = item;
   }
