@@ -7,16 +7,21 @@
         <div class="left-item-menu">
             <h2 class="logo-title">{{logo.name}}</h2>
         </div>
-
     </div>
 
     <div class="slider-menu">
         <div *ngFor="let sliderMenuItem of logos; let i = index"
-             class="slider-menu-item" [ngClass]="{'slider-menu-item-active': i === currentMenuItem}" (click)="setCurrentMenu(i)">
+             class="slider-menu-item"
+             [ngClass]="{'slider-menu-item-active': i === currentMenuItem}"
+             (click)="setCurrentMenu(i)">
+
         </div>
     </div>
     
-    <div class="arrow-top" [@changeVisibleArrow]="visibleTopArrow" (click)="nextMenuItem(0)">
+    <div class="arrow-top"
+         [@changeVisibleArrow]="visibleTopArrow"
+         (click)="nextMenuItem(0)">
+
         <img src="assets/top-arrow-white.png" class="arrow-icon" alt="Arrow Icon">
     </div>
 </div>
