@@ -19,7 +19,6 @@ export class AppComponent {
 
   canScroll: boolean = true;
   currentMenuItem: number = 0;
-
   touchStartYoffset: number;
 
   @ViewChild('mainContainer', {static: false}) public mainContainer: ElementRef<any>;
@@ -27,14 +26,11 @@ export class AppComponent {
   @HostListener('wheel', ['$event'])
   onScrollMainSection(e) {
     if (this.canScroll) {
-      this.canScroll = false;
       if (e.deltaY > 0 && this.logos[this.currentMenuItem + 1]) {
-        // document.getElementById('section' + (this.currentMenuItem + 1)).scrollIntoView();
-        // this.currentMenuItem += 1;
+        this.canScroll = false;
         this.nextMenuItem(this.currentMenuItem + 1);
       } else if (e.deltaY < 0 && this.logos[this.currentMenuItem - 1]) {
-        // document.getElementById('section' + (this.currentMenuItem - 1)).scrollIntoView();
-        // this.currentMenuItem -= 1;
+        this.canScroll = false;
         this.nextMenuItem(this.currentMenuItem - 1);
       }
       setTimeout(() => this.canScroll = true, 1000);
@@ -58,6 +54,10 @@ export class AppComponent {
   nextMenuItem(item: number) {
     document.getElementById('section' + (item)).scrollIntoView();
     this.currentMenuItem = item;
+  }
+
+  setCurrentMenu(menuItem: number) {
+    this.nextMenuItem(menuItem);
   }
 
 }
