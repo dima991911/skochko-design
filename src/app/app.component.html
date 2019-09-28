@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="hamburger-icon" (click)="onToggleMenu()">
+    <div class="hamburger-icon" [ngClass]="{'hamburger-icon-open': isMenuVisible === 'showMenu'}" (click)="onToggleMenu()">
         <div class="hamburger-icon-line"></div>
         <div class="hamburger-icon-line"></div>
         <div class="hamburger-icon-line"></div>

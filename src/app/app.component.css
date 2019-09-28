@@ -7,22 +7,24 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    padding: 10px;
+    padding: 20px 0;
     background: transparent;
     z-index: 10;
 }
 
 .hamburger-icon {
     width: 25px;
-    padding: 0 20px;
+    margin-right: 20px;
     cursor: pointer;
 }
 
 .hamburger-icon-line {
+    position: relative;
     height: 3px;
     margin-bottom: 4px;
-    background: gray;
+    background: white;
     border-radius: 10px;
+    transition: 0.3s;
 }
 
 .hamburger-icon-line:last-child {
@@ -38,4 +40,26 @@
     background: white;
     z-index: 9;
     box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+}
+
+/*-----------Hamburger menu animate------------*/
+
+.hamburger-icon-open .hamburger-icon-line {
+    background: gray;
+}
+
+.hamburger-icon-open .hamburger-icon-line:nth-child(1) {
+    top: 7px;
+    transform: rotate(-135deg);
+}
+
+
+.hamburger-icon-open .hamburger-icon-line:nth-child(2) {
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.hamburger-icon-open .hamburger-icon-line:nth-child(3) {
+    top: -7px;
+    transform: rotate(135deg);
 }
