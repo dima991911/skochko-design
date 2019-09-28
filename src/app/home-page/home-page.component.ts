@@ -2,12 +2,41 @@ import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 const logos = [
-  {name: 'New Logo', background: 'red'},
-  {name: 'Old Logo', background: 'blue'},
-  {name: 'Some Logo White', background: 'green'},
-  {name: 'Some Logo Dima', background: 'yellow'},
-  {name: 'Some Logo Vadym', background: 'cyan'},
-  {name: 'Some Logo Olesya', background: 'pink'},
+  {
+    name: 'Ditching Disposables',
+    backgroundUrl: 'assets/logos_bg/ditching_disposables_bg.jpg',
+    logoUrl: 'assets/logos/ditching_disposables_logo.png'
+  },
+  {
+    name: 'Prosper Video',
+    backgroundUrl: 'assets/logos_bg/prosper.video_bg.jpg',
+    logoUrl: 'assets/logos/prosper.video_logo.png'
+  },
+  {
+    name: 'le Montnoir',
+    backgroundUrl: 'assets/logos_bg/le_montnoir_bg.jpg',
+    logoUrl: 'assets/logos/le_montnoir_logo.png'
+  },
+  {
+    name: 'Beard Style',
+    backgroundUrl: 'assets/logos_bg/beard_style_bg.jpg',
+    logoUrl: 'assets/logos/beard_style_logo.png'
+  },
+  {
+    name: 'Sakseide',
+    backgroundUrl: 'assets/logos_bg/sakseide_bg.jpg',
+    logoUrl: 'assets/logos/sakseide_logo.png'
+  },
+  {
+    name: 'Aaron Anthony',
+    backgroundUrl: 'assets/logos_bg/aaron_anthony_bg.jpg',
+    logoUrl: 'assets/logos/aaron_anthony_logo.png'
+  },
+  {
+    name: 'Emily J',
+    backgroundUrl: 'assets/logos_bg/emily_j_bg.jpg',
+    logoUrl: 'assets/logos/emily_j_logo.png'
+  }
 ];
 
 @Component({

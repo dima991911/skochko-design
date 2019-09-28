@@ -1,11 +1,15 @@
 <div #mainContainer class="main-container">
     <div *ngFor="let logo of logos; let i = index"
          class="logo-section"
-         [ngStyle]="{background: logo.background}"
+         [ngStyle]="{backgroundImage: 'url(' + logo.backgroundUrl + ')'}"
          [id]="'section' + i">
 
         <div class="left-item-menu">
             <h2 class="logo-title">{{logo.name}}</h2>
+        </div>
+
+        <div class="logo-container">
+            <img [src]="logo.logoUrl" [alt]="'Logo' + logo.name" class="logo">
         </div>
     </div>
 
