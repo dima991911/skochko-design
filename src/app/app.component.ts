@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -22,6 +23,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class AppComponent {
   isMenuVisible: string = 'hideMenu';
+
+    constructor(private router: Router) {
+        router.events.subscribe((val) => {
+            this.isMenuVisible = 'hideMenu';
+        });
+    }
 
   onToggleMenu() {
     this.isMenuVisible = this.isMenuVisible === 'hideMenu' ? 'showMenu' : 'hideMenu';

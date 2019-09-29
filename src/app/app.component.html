@@ -8,8 +8,8 @@
 
 <div [@toggleMenu]="isMenuVisible" class="header-container">
     <nav class="navigation">
-        <a href="#" class="navigation-item">HOME</a>
-        <a href="#" class="navigation-item">PORTFOLIO</a>
+        <a [routerLink]="['/']" class="navigation-item">HOME</a>
+        <a [routerLink]="['/portfolio']" class="navigation-item">PORTFOLIO</a>
         <a href="#" class="navigation-item">CONTACT</a>
     </nav>
 
