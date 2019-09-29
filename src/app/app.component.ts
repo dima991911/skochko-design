@@ -12,12 +12,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         zIndex: 9
       })),
       state('hideMenu', style({
-        transform: 'translateX(100%)',
+        transform: 'translateX(-100%)',
         zIndex: 0
       })),
       transition('showMenu=>hideMenu', animate('350ms ease-out')),
       transition('hideMenu=>showMenu', animate('350ms ease-out'))
-    ]),
+    ])
   ]
 })
 export class AppComponent {
