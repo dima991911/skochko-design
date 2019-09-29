@@ -6,6 +6,18 @@
     </div>
 </header>
 
-<div [@toggleMenu]="isMenuVisible" class="header-container"></div>
+<div [@toggleMenu]="isMenuVisible" class="header-container">
+    <nav class="navigation">
+        <a href="#" class="navigation-item">HOME</a>
+        <a href="#" class="navigation-item">PORTFOLIO</a>
+        <a href="#" class="navigation-item">CONTACT</a>
+    </nav>
+
+    <div class="social-container">
+        <div class="social-container-item"><img src="assets/icons/dribble-icon.svg" alt="Dribble"></div>
+        <div class="social-container-item"><img src="assets/icons/behance-icon.svg" alt="Behance"></div>
+        <div class="social-container-item"><img src="assets/icons/instagram-icon.svg" alt="Instagram"></div>
+    </div>
+</div>
 
 <router-outlet></router-outlet>
