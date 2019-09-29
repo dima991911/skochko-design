@@ -1,0 +1,82 @@
+.main-container {
+    position: relative;
+}
+
+.logo-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.left-item-menu {
+    padding: 0 50px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 40%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.logo-title {
+    font-size: 36px;
+    color: white;
+    margin-top: 20%;
+}
+
+.logo-container {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.logo {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.slider-menu {
+    position: fixed;
+    bottom: 2%;
+    left: 2%;
+}
+
+.slider-menu-item {
+    position: relative;
+    margin-bottom: 15px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    opacity: .3;
+    cursor: pointer;
+}
+
+.slider-menu-item-active {
+    border: 1px solid white;
+    background: transparent;
+    opacity: 1;
+    transition: .3s ease;
+}
+
+.arrow-top {
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    padding: 5px 15px;
+    background: rgba(0, 0, 0, .8);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    width: 15px;
+}
